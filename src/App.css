@@ -1,7 +1,12 @@
-form, ul, #zeroTasks{
+form, ul, #zeroTasks, #alert{
     width: fit-content;
     margin-inline: auto;
     margin-top: 10px
+}
+
+#alert {
+    color: orange;
+    font-weight: bold;
 }
 
 button{

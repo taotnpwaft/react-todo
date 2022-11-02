@@ -9,6 +9,7 @@ export default function Form() {
     //list of all tasks
     const [taskList, setTaskList] = useState([])
     const input = useRef()
+    const [showAlert, setShowAlert] = useState(false)
 
     useEffect(()=>{
       input.current.focus()
@@ -20,7 +21,8 @@ export default function Form() {
         if (input.current.value.replace(/\s/g, '').length>0) {
          setTaskList([...taskList, task])
          setTask(['', false])
-        }
+         setShowAlert(false)
+        } else setShowAlert(true)
       input.current.focus()
     }
 
@@ -40,6 +42,8 @@ export default function Form() {
 
         <button type='submit'>create task</button>
     </form>
+
+    {showAlert && <div id="alert">To create a task you have to type something in the input above firstly</div>}
 
     {taskList.length===0 ? 
       <div id='zeroTasks'>You don't have any tasks to do!</div>
