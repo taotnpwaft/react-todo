@@ -14,7 +14,7 @@ export default function TodoList(props) {
             return (
             <li key={i} style={a[1] === true ? completed : null }
               onClick={e=>props.fn(a, i)}
-              title={a[1] === true ? 'mark as completed' : 'mark as uncompleted'}
+              title={a[1] === false ? 'mark as completed' : 'mark as uncompleted'}
             >{a}</li>)
         }) }
     </ul>
