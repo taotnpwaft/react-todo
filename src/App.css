@@ -3,7 +3,9 @@ form, ul, #zeroTasks, #alert{
     margin-inline: auto;
     margin-top: 10px
 }
-
+#dateInput{
+    margin-left: 5px
+}
 #alert {
     color: orange;
     font-weight: bold;

@@ -15,7 +15,7 @@ export default function TodoList(props) {
             <li key={i} style={a[1] === true ? completed : null }
               onClick={e=>props.fn(a, i)}
               title={a[1] === false ? 'mark as completed' : 'mark as uncompleted'}
-            >{a}</li>
+            >{a[0]} | {a[2]}</li>
             <span className='deleteBtn' title='delete this task' 
             onClick={e=>props.del(a)}>delete</span>
             </div>)
