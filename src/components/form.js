@@ -29,7 +29,7 @@ export default function Form() {
 
     //this function changes status of a task (completed / not completed)
     //it is also passed to TodoList component
-    function changeStatus(task, index){
+    function changeStatus(task, index){ 
       setTaskList(taskList.map((a, i)=>{
         if(i===index) return [task[0], !task[1], task[2]]
         else return a
