@@ -21,7 +21,7 @@ export default function Form() {
         // create a new task if input isn't empty and doesn't contain spaces only
         if (input.current.value.replace(/\s/g, '').length>0) {
          setTaskList([...taskList, task])
-         setTask(['', false])
+         setTask(['', false, null])
          setShowAlert(false)
         } else setShowAlert(true)
       input.current.focus()
@@ -47,7 +47,8 @@ export default function Form() {
     <form action="" onSubmit={e=>handleSubmit(e)} >
         <input ref={input} type="text" value={task[0]} placeholder='type your task' onChange={e=>setTask([e.target.value, false, dateInput.current.value])}/>
 
-        <input type="date" id='dateInput' ref={dateInput} />
+        <input type="date" id='dateInput' ref={dateInput} 
+        onChange={e=>setTask([input.current.value, false, e.target.value])} />
 
         <button type='submit'>create task</button>
     </form>
