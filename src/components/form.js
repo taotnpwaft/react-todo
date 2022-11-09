@@ -35,6 +35,10 @@ export default function Form() {
       }))
     }
 
+    function deleteTask(task){
+      setTaskList(taskList.filter(el=>el!==task))
+    }
+
   return (
     <>
     <form action="" onSubmit={e=>handleSubmit(e)} >
@@ -48,7 +52,7 @@ export default function Form() {
     {taskList.length===0 ? 
       <div id='zeroTasks'>You don't have any tasks to do!</div>
       :
-      <TodoList taskList={taskList} fn={changeStatus}></TodoList>}
+      <TodoList taskList={taskList} fn={changeStatus} del={deleteTask}></TodoList>}
 
     </>
   )

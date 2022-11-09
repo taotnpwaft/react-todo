@@ -16,3 +16,16 @@ button{
 button, li{
     cursor: pointer
 }
+
+.task{
+    display: flex;
+    gap: 10px
+}
+.task:hover .deleteBtn{
+    visibility: visible
+}
+.deleteBtn{
+    color: red;
+    cursor: pointer;
+    visibility: hidden
+}
